@@ -1,15 +1,12 @@
 *,
 
-
 h2{
   text-align: center;
   color: rgb(8, 94, 175);
   margin: 15px 30px 15px 25px;
 }
 
-
-
-.card-footer {
+ .card-footer {
   text-align: center;
 }
 

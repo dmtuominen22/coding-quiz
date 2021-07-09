@@ -1,8 +1,8 @@
 /*assignment to create a quiz with a start button timer answer questions answer question time is substracted if wrong answer game if out of questions or time runs out, save my initials and score.*/
 
-var generateBtn = document.querySelector("#generate");
+var startQuiz = document.getElementById("startQuiz");
 var questionEl = document.getElementById("question");
-
+var startQuiz = document.getElementById("startQuiz")
 var counter = document.getElementById("counter");
 
 var choiceA = document.getElementById("A");
@@ -10,11 +10,6 @@ var choiceB = document.getElementById("B");
 var choiceC = document.getElementById("C");
 var choiceD = document.getElementById("D");
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", this.#generate);
-  
-
-//let timer;
 
 var questions = [
     {
@@ -126,5 +121,10 @@ function checkAnswer (choicePicked){
         alert("Wrong!");
     } 
 };
+// Add event listener to generate button
+generateBtn.addEventListener("click", this.#startQuiz);
 
+function startquiz() {
+    
+}
 
