@@ -11,7 +11,8 @@ var choiceC = document.getElementById("C");
 var choiceD = document.getElementById("D");
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", StartQuiz);
+generateBtn.addEventListener("click", this.#generate);
+  
 
 //let timer;
 
@@ -23,7 +24,7 @@ var questions = [
         choiceC : "Cascadeing Style Sheet",    
         choiceD : "Color and Style Sheet",
         correct: "A"
-    }
+    },
 
     {
         question: "What are people who write computer code called?",
@@ -104,9 +105,7 @@ var questions = [
         choiceC: "Output",
         choiceD: "Syntax",
         correct: "D"
-    },  
-
-
+    } 
 ];
 
  questions.innerHTML=questions[0].questionEl
