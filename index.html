@@ -5,9 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>JavaScrip Coding Quiz</title>
+    <title>Coding Quiz</title>
 </head>
 <body>
-    <script src="script.js"></script>
+    <h2>Coding Quiz Challenge</h2>
+
+      <div id="questions"> <p> You will be tested on your knowledge of the past 4 Modules we have completed, you will have 10 question  to answer within the time allower.  They will all be multiple choice </p></div>
+
+    <div id="startQuiz"></div>
+
+    <div class="card-footer">
+        <button id="generate" class="btn">Start Quiz</button>
+      </div>
+    <div id="timer"></div>
+    
+    <div id="choices:">
+        <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+        <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+        <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+        <div class="choice" id="D" onclick="checkAnswer('D')"></div>   
+    </div>
+
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
