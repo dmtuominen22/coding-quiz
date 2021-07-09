@@ -1,7 +1,6 @@
 /*assignment to create a quiz with a start button timer answer questions answer question time is substracted if wrong answer game if out of questions or time runs out, save my initials and score.*/
 
 var generateBtn = document.querySelector("#generate");
-var startQuiz = document.getElementById("start");
 var questionEl = document.getElementById("question");
 
 var counter = document.getElementById("counter");
@@ -12,7 +11,9 @@ var choiceC = document.getElementById("C");
 var choiceD = document.getElementById("D");
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", startQuiz);
+generateBtn.addEventListener("click", StartQuiz);
+
+//let timer;
 
 var questions = [
     {
@@ -22,17 +23,16 @@ var questions = [
         choiceC : "Cascadeing Style Sheet",    
         choiceD : "Color and Style Sheet",
         correct: "A"
-    },
+    }
 
     {
-        question: "Which is the correct way to write a JavaScript array?",
-        choiceA: "var txt = new Array(1:"tim",2:"kim",3:"jim")",
-        choiceB: "var txt = new Array:1=("tim")2=("kim")3=("jim")",
-        choiceC: "var txt = new Array("tim","kim","jim")",
-        choiceD: "var txt = new Array="tim","kim","jim"",
+        question: "What are people who write computer code called?",
+        choiceA: "Manufacturers",
+        choiceB: "Crptographers",
+        choiceC: "Programmers",
+        choiceD: "Professors",
         correct: "C"
     },  
-
 
     {
         question: "What are variables used for in JavaScript Programs?",
@@ -44,74 +44,76 @@ var questions = [
     },
 
     {
-        question: "Which of the following is not a valid JavaScript variable name?",
-        choiceA: "Storing numbers, dates, or other values",
-        choiceB: "Varying randomly",
-        choiceC: "Causing high-school algebra flashbacks",
-        choiceD: "None of the above",
+        question: "What group of tags are used to define the text headers in the body of the HTML document?",
+        choiceA: "<td>",
+        choiceB: "<footer>",
+        choiceC: "<h1> to <h6>",
+        choiceD: "<button>",
         correct: "C"
     },
 
     {
-        question: "?",
-        choiceA: "",
-        choiceB: "",
-        choiceC: "",
-        choiceD: "",
+        question: "Which of thses is NOT a programming language?",
+        choiceA: "Python",
+        choiceB: "Java",
+        choiceC: "Ruby",
+        choiceD: "Banana",
         correct: "D"
     },  
 
     {
-        question: "?",
-        choiceA: "",
-        choiceB: "",
-        choiceC: "",
-        choiceD: "",
+        question: "What word describes the set of instructions that computers need to do work?",
+        choiceA: "Blueprint",
+        choiceB: "Agenda",
+        choiceC: "Program",
+        choiceD: "Synopsis",
         correct: "C"
     },  
 
     {
-        question: "?",
-        choiceA: "",
-        choiceB: "",
-        choiceC: "",
-        choiceD: "",
-        correct: "A"
-    },  
-
-    {
-        question: "?",
-        choiceA: "",
-        choiceB: "",
-        choiceC: "",
-        choiceD: "",
+        question: "What is computer coding?",
+        choiceA: "A list of functions",
+        choiceB: "Telling a compuer what to do",
+        choiceC: "A TV show",
+        choiceD: "A radio show",
         correct: "B"
     },  
 
     {
-        question: "?",
-        choiceA: "",
-        choiceB: "",
-        choiceC: "",
-        choiceD: "",
-        correct: "C"
+        question: "What tag is used to define a hyperlink, or link to anoher page?",
+        choiceA: "<strong>",
+        choiceB: "<em>",
+        choiceC: "<blockquote>",
+        choiceD: "<a>",
+        correct: "D"
     },  
 
     {
-        question: "?",
-        choiceA: "",
-        choiceB: "",
-        choiceC: "",
-        choiceD: "",
+        question: "what can loop offer JaveScript code as a whole?",
+        choiceA: "improved performance",
+        choiceB: "Added plug-ins",
+        choiceC: "Cleaner syntax",
+        choiceD: "Cross-platform support",
         correct: "A"
     },  
+
+    {
+        question: "What is the language or list of instructions that are executed by the computer (how JavaScript is built)?",
+        choiceA: "JSON",
+        choiceB: "Scope",
+        choiceC: "Output",
+        choiceD: "Syntax",
+        correct: "D"
+    },  
+
+
 ];
 
-questionEl.innerHTML=questions[0].question
-choiceA.innerHTML=questions[0].choiceA
-choiceB.innerHTML=questions[0].choiceB
-choiceC.innerHTML=questions[0].choiceC
-choiceD.innerHTML=questions[0].choiceD
+ questions.innerHTML=questions[0].questionEl
+ choiceA.innerHTML=questions[0].choiceA
+ choiceB.innerHTML=questions[0].choiceB
+ choiceC.innerHTML=questions[0].choiceC
+ choiceD.innerHTML=questions[0].choiceD
 
 //keeping track of the score
 var score = 0;
@@ -124,14 +126,6 @@ function checkAnswer (choicePicked){
     else {
         alert("Wrong!");
     } 
-}
+};
 
-//function (set up the timer)
 
-//when click if they click correct answer (true) we add 1 to score  if wrong get prompt wrong!!!
-
-// for (let index =0; index < question.length; index++) {
-    
-//     if (answer ===a && question[index].a === 'a'
-//     )
-// }
