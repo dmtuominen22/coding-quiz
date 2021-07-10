@@ -1,19 +1,20 @@
 /*assignment to create a quiz with a start button timer answer questions answer question time is substracted if wrong answer game if out of questions or time runs out, save my initials and score.*/
 
-var startQuiz = document.getElementById("startQuiz");
+var start = document.getElementById("start");
+var quiz = document.getElementById("quiz");
 var questionEl = document.getElementById("question");
-var startQuiz = document.getElementById("startQuiz")
-var counter = document.getElementById("counter");
 
 var choiceA = document.getElementById("A");
 var choiceB = document.getElementById("B");
 var choiceC = document.getElementById("C");
 var choiceD = document.getElementById("D");
+var counter = document.getElementById("counter");
 
 
-var questions = [
+
+var question = [
     {
-        question: "What does CSS stand for",
+        question : "What does CSS stand for",
         choiceA : "Cascade Style Sheet",
         choiceB : "Covert Styles Sheet",  
         choiceC : "Cascadeing Style Sheet",    
@@ -22,19 +23,19 @@ var questions = [
     },
 
     {
-        question: "What are people who write computer code called?",
-        choiceA: "Manufacturers",
-        choiceB: "Crptographers",
-        choiceC: "Programmers",
-        choiceD: "Professors",
-        correct: "C"
+        question : "What are people who write computer code called?",
+        choiceA : "Manufacturers",
+        choiceB : "Crptographers",
+        choiceC : "Programmers",
+        choiceD : "Professors",
+        correct : "C"
     },  
 
     {
-        question: "What are variables used for in JavaScript Programs?",
-        choiceA: "Storing numbers, dates, or other values",
-        choiceB: "Varying randomly",
-        choiceC: "Causing high-school algebra flashbacks",
+        question : "What are variables used for in JavaScript Programs?",
+        choiceA : "Storing numbers, dates, or other values",
+        choiceB : "Varying randomly",
+        choiceC : "Causing high-school algebra flashbacks",
         choiceD: "None of the above",
         correct: "A"
     },
@@ -85,7 +86,7 @@ var questions = [
     },  
 
     {
-        question: "what can loop offer JaveScript code as a whole?",
+        question: "What can loop offer JaveScript code as a whole?",
         choiceA: "improved performance",
         choiceB: "Added plug-ins",
         choiceC: "Cleaner syntax",
@@ -103,16 +104,27 @@ var questions = [
     } 
 ];
 
- questions.innerHTML=questions[0].questionEl
- choiceA.innerHTML=questions[0].choiceA
- choiceB.innerHTML=questions[0].choiceB
- choiceC.innerHTML=questions[0].choiceC
- choiceD.innerHTML=questions[0].choiceD
+question.innerHTML=question[0].questionEl
+choiceA.innerHTML=question[0].choiceA
+choiceB.innerHTML=question[0].choiceB
+choiceC.innerHTML=question[0].choiceC
+choiceD.innerHTML=question[0].choiceD
 
-//keeping track of the score
+//keeping track of score
 var score = 0;
 
-function checkAnswer (choicePicked){
+
+// Add event listener to generate button
+start.addEventListener("click", startQuiz);
+
+
+//start quiz
+    function startQuiz(){
+       //what do I put here UGH
+    }
+
+//check answers
+   function checkAnswer (choicePicked){
     if (choicePicked === questions[0].correct)
     { score ++
         alert("Correct");
@@ -120,11 +132,5 @@ function checkAnswer (choicePicked){
     else {
         alert("Wrong!");
     } 
-};
-// Add event listener to generate button
-generateBtn.addEventListener("click", this.#startQuiz);
-
-function startquiz() {
-    
 }
-
+  
