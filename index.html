@@ -9,23 +9,29 @@
 </head>
 <body>
   <div id="container">
-  <h1>Coding Quiz Challenge</h1>
+    <h1 id ="title">Coding Quiz Challenge</h1>
 
-  <div id="timer"></div>
+    <div id="timer"></div>
 
-    <div id="questions"> <p> You will be tested on your knowledge of the past 4 Modules we have completed, you will have 10 question  to answer within the time allower.  They will all be multiple choice </p></div>
+      <div id="intro"> <p> You will be tested on your knowledge of the past 4 Modules we have completed, you will have 10 question  to answer within the time allower.  They will all be multiple choice </p></div>
 
-  
-     <div id="start">Start Quiz!</div>
+    
+    <div id="start">Start Quiz!</div>
     <div id="quiz" style="display: none">
-        <div id="question"></div>
-        <div id="choices">
-          <div class="choice" id="A" onclick="checkAnswer('A')"></div>
-          <div class="choice" id="B" onclick="checkAnswer('B')"></div>
-          <div class="choice" id="C" onclick="checkAnswer('C')"></div>
-          <div class="choice" id="D" onclick="checkAnswer('D')"></div> 
-        </div>
-</div>
+      <div id="question"></div>
+      <div id="choices">
+        <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+        <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+        <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+        <div class="choice" id="D" onclick="checkAnswer('D')"></div> 
+      </div>
+    </div>
+    <div id ="validate"></div>
+
+    <div id="addHighScore" style="display: none"> Enter Initials: <input id= "initials" type="text">
+    <button onclick="submitHighScore()">Submit </button> </div>
+        
+  </div>
 
   
     <script src="assets/js/script.js"></script>

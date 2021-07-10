@@ -1,16 +1,26 @@
-/*assignment to create a quiz with a start button timer answer questions answer question time is substracted if wrong answer game if out of questions or time runs out, save my initials and score.*/
+/*assignment to create a quiz with a start button timer answer questions answer question time is substracted if wrong answer game if out of questions or time runs out, save my initials and  show high score on home screen of the quiz.*/
 
 var start = document.getElementById("start");
 var quiz = document.getElementById("quiz");
 var questionEl = document.getElementById("question");
+var validate = document.getElementById("validate");
+var currentQ = 0;
+var countTime = document.getElementById("timer");
+var time =0;
+var myTimer;
+var title = document.getElementById("title");
+var intro = document.getElementById("intro");
+var highScore = new Array();
+var addHighScore =document.getElementById("addHighScore");
 
 var choiceA = document.getElementById("A");
 var choiceB = document.getElementById("B");
 var choiceC = document.getElementById("C");
 var choiceD = document.getElementById("D");
-var counter = document.getElementById("counter");
 
 
+//keeping track of score
+var score = 0;
 
 var question = [
     {
@@ -19,7 +29,7 @@ var question = [
         choiceB : "Covert Styles Sheet",  
         choiceC : "Cascadeing Style Sheet",    
         choiceD : "Color and Style Sheet",
-        correct: "A"
+        correct : "A"
     },
 
     {
@@ -42,10 +52,10 @@ var question = [
 
     {
         question: "What group of tags are used to define the text headers in the body of the HTML document?",
-        choiceA: "<td>",
-        choiceB: "<footer>",
-        choiceC: "<h1> to <h6>",
-        choiceD: "<button>",
+        choiceA: "&lt;td&gt;",
+        choiceB: "&lt;footer&gt;",
+        choiceC: "&lt;h1&gt; to &lt;h6&gt;",
+        choiceD: "&lt;button&gt;",
         correct: "C"
     },
 
@@ -78,10 +88,10 @@ var question = [
 
     {
         question: "What tag is used to define a hyperlink, or link to anoher page?",
-        choiceA: "<strong>",
-        choiceB: "<em>",
-        choiceC: "<blockquote>",
-        choiceD: "<a>",
+        choiceA: "&lt;strong&gt;",
+        choiceB: "&lt;em&gt;",
+        choiceC: "&lt;blockquote&gt;",
+        choiceD: "&lt;a&gt;",
         correct: "D"
     },  
 
@@ -104,33 +114,87 @@ var question = [
     } 
 ];
 
-question.innerHTML=question[0].questionEl
-choiceA.innerHTML=question[0].choiceA
-choiceB.innerHTML=question[0].choiceB
-choiceC.innerHTML=question[0].choiceC
-choiceD.innerHTML=question[0].choiceD
+function timer (){
+    myTimer = setInterval (function () {
+        if (time > 1) {
+           countTime.innerHTML = time;
+        }
+        else {
 
-//keeping track of score
-var score = 0;
+            countTime.innerHTML = 'complete';
+            quizComplete();
+        }
+        time--;
+    }, 1000);
+}
 
 
 // Add event listener to generate button
-start.addEventListener("click", startQuiz);
+start.addEventListener("click", function (){
+    validate.innerHTML = "";
+    start.style.display = "none";
+    quiz.style.display = "block";
+    title.style.display = "none";
+    intro.style.display = "none";
+    currentQ = 0;
+    time=200;
+    timer();
+    showQuestion (currentQ);
+}) ;
 
 
-//start quiz
-    function startQuiz(){
-       //what do I put here UGH
+
+//show quesiton
+function showQuestion (questionNumber){
+    if (questionNumber < question.length){
+        questionEl.innerHTML=question[questionNumber].question;
+        choiceA.innerHTML=question[questionNumber].choiceA;
+        choiceB.innerHTML=question[questionNumber].choiceB;
+        choiceC.innerHTML=question[questionNumber].choiceC;
+        choiceD.innerHTML=question[questionNumber].choiceD;
     }
+    else {
+        quizComplete();
+    }
+  }
+function quizComplete() {
+    clearInterval(myTimer);
+    start.style.display = "block";
+    quiz.style.display = "none"; 
+    validate.innerHTML= "Your Score Is " + score;
+    addHighScore.style.display = "block";
+}
+
+//add high score
+function submitHighScore () {
+    highScore.push ( {
+        initials: document.getElementById("initials").value,
+        topScore: score
+    });
+    addHighScore.style.display = "none";
+    showHighScore();
+}
+
+//FUNCTION show high score
+function showHighScore () {
+    let highScoreText = "<h2>High Scores</h2>";
+    for (var i = 0; i <highScore.length; i++){
+        highScoreText += "<p>" + highScore[i].initials + ": "+ highScore[i].topScore + "</p>";    
+    }
+    validate.innerHTML = highScoreText;
+}
 
 //check answers
    function checkAnswer (choicePicked){
-    if (choicePicked === questions[0].correct)
+    if (choicePicked === question[currentQ].correct)
     { score ++
-        alert("Correct");
+         validate.innerHTML="Correct"; 
+         
     }
     else {
-        alert("Wrong!");
+        validate.innerHTML="Wrong";
+        time -= 10;
     } 
+    currentQ++; 
+    showQuestion(currentQ);
 }
-  
