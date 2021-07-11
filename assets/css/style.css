@@ -1,7 +1,20 @@
+*,
+
+
 h1{
   text-align: center;
-  color:blue;
+  color: rgb(8, 94, 175);
   margin: 15px 30px 15px 25px;
+}
+
+
+.card-footer {
+  text-align: center;
+  content: " ";
+  display: block;
+  width: 100%;
+  background: #e7e9eb;
+  height: 2px;
 }
 
 #container{
@@ -26,34 +39,20 @@ h1{
   padding: 14px 34px;
   text-align: center;
   cursor: pointer; 
- }
- 
-
-#choices{
-  width :450px;
-  position: absolute; 
-  right : 0;
-  top : 100px; 
-  padding : 10px
+}  
+#choice
+border: none;
+background-color: rgb(8, 94, 175);
+border-radius: 25px;
+color:white;
+display: inline-block;
+font-size: 22px;
+line-height: 22px;
+margin: 16px 16px 16px 20px;
+padding: 14px 34px;
+text-align: center;
+cursor: pointer; 
 }
-.choice{
-  display: inline-block;
-  width : 135px;
-  text-align: center;
-  border : 1px solid blue;
-  border-radius: 5px;
-  cursor: pointer;
-  padding : 5px;
-}
-  
-#timer{
-   position: absolute;
-  height : 100px;
-  width : 200px;
-  bottom : 0px;
-  text-align: center;
-}
-
 
 
 
