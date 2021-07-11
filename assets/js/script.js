@@ -108,11 +108,11 @@ var question = [
     },  
 
     {
-        question: "What is the language or list of instructions that are executed by the computer (how JavaScript is built)?",
-        choiceA: "JSON",
-        choiceB: "Scope",
-        choiceC: "Output",
-        choiceD: "Syntax",
+        question: "Inside which HTML element do we put the JavaScript?",
+        choiceA: "&lt;scriptin&gt;",
+        choiceB: "&lt;javascript&gt;",
+        choiceC: "&lt;js&gt;",
+        choiceD: "&lt;scriptgt;",
         correct: "D"
     } 
 ];
@@ -138,12 +138,12 @@ start.addEventListener("click", function (){
     quiz.style.display = "block";
     title.style.display = "none";
     intro.style.display = "none";
+
     currentQ = 0;
     time=150;
     timer();
     showQuestion (currentQ);
    
-
 }) ;
 
 

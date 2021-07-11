@@ -5,18 +5,20 @@ h1{
   text-align: center;
   color: rgb(8, 94, 175);
   margin: 15px 30px 15px 25px;
-  
 }
 
-
-.card-footer {
-  text-align: center;
-  content: " ";
-  display: block;
-  width: 100%;
-  background: #e7e9eb;
-  height: 2px;
+#timer {
+  float: right;
+  font-weight: bold;
+ 
 }
+
+ #showHighScore {
+  float: left;
+  font-weight: bold;
+}  
+
+
 
  #container{
   margin : 20px auto;
@@ -55,13 +57,3 @@ h1{
   text-align: center;
   cursor: pointer; 
 }
-
-/* #timer {
-  text-align:right;
-  display: 
-}
-
-#showHighScore {
-  text-align:left;
-} */
-
