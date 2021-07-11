@@ -18,8 +18,7 @@ var choiceB = document.getElementById("B");
 var choiceC = document.getElementById("C");
 var choiceD = document.getElementById("D");
 
-// localStorage.setItem (HighScore, JSON.stringify(itemsArray));
-// const  = JSON.parse(localStorage.getItem)('addHighScore'));
+
 
 
 //keeping track of score
@@ -139,13 +138,12 @@ start.addEventListener("click", function (){
     title.style.display = "none";
     intro.style.display = "none";
     currentQ = 0;
-    time=200;
+    time=150;
     timer();
     showQuestion (currentQ);
    
 
 }) ;
-
 
 
 //show quesiton
