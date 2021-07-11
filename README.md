@@ -16,7 +16,7 @@ https://dmtuominen22.github.io/coding-quiz/
 https://github.com/dmtuominen22/coding-quiz
 
 
-![image](https://user-images.githubusercontent.com/84994258/125176688-ab478d00-e192-11eb-8d33-ded523c0c703.png)
+![image](https://user-images.githubusercontent.com/84994258/125209938-c9c48b80-e259-11eb-8869-e7ba04f8a7de.png)
 
 ## Contribution
 Made by Denise Tuominen
