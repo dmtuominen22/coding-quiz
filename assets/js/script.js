@@ -18,6 +18,9 @@ var choiceB = document.getElementById("B");
 var choiceC = document.getElementById("C");
 var choiceD = document.getElementById("D");
 
+// localStorage.setItem (HighScore, JSON.stringify(itemsArray));
+// const  = JSON.parse(localStorage.getItem)('addHighScore'));
+
 
 //keeping track of score
 var score = 0;
@@ -35,7 +38,7 @@ var question = [
     {
         question : "What are people who write computer code called?",
         choiceA : "Manufacturers",
-        choiceB : "Crptographers",
+        choiceB : "Teacher",
         choiceC : "Programmers",
         choiceD : "Professors",
         correct : "C"
@@ -120,7 +123,6 @@ function timer (){
            countTime.innerHTML = time;
         }
         else {
-
             countTime.innerHTML = 'complete';
             quizComplete();
         }
@@ -140,6 +142,8 @@ start.addEventListener("click", function (){
     time=200;
     timer();
     showQuestion (currentQ);
+   
+
 }) ;
 
 
@@ -197,4 +201,5 @@ function showHighScore () {
     } 
     currentQ++; 
     showQuestion(currentQ);
+
 }
