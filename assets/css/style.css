@@ -17,7 +17,7 @@ h1{
   height: 2px;
 }
 
-#container{
+ #container{
   margin : 20px auto;
   background-color: white;
   height: 300px;
@@ -25,7 +25,7 @@ h1{
   border-radius: 5px;
   box-shadow: 0px 5px 15px 0px;
   position: relative;
-}
+} 
 
  #start{
   border: none;
@@ -40,18 +40,18 @@ h1{
   text-align: center;
   cursor: pointer; 
 }  
-#choice
-border: none;
-background-color: rgb(8, 94, 175);
-border-radius: 25px;
-color:white;
-display: inline-block;
-font-size: 22px;
-line-height: 22px;
-margin: 16px 16px 16px 20px;
-padding: 14px 34px;
-text-align: center;
-cursor: pointer; 
+#A,#B, #C, #D {
+  border: none;
+  background-color: rgb(8, 94, 175);
+  border-radius: 15px;
+  color:white;
+  display: list-item;
+  font-size: 16px;
+  line-height: 16px;
+  margin: 10px 10px 10px 15px;
+  padding: 10px 10px;
+  text-align: center;
+  cursor: pointer; 
 }
 
 
