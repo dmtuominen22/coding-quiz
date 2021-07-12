@@ -138,6 +138,9 @@ start.addEventListener("click", function (){
     quiz.style.display = "block";
     title.style.display = "none";
     intro.style.display = "none";
+    score=0;
+
+    
 
     currentQ = 0;
     time=150;
