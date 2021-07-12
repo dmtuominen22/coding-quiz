@@ -109,7 +109,7 @@ var question = [
 
     {
         question: "Inside which HTML element do we put the JavaScript?",
-        choiceA: "&lt;script&gt;",
+        choiceA: "&lt;Pizza&gt;",
         choiceB: "&lt;javaScript&gt;",
         choiceC: "&lt;js&gt;",
         choiceD: "&lt;script&gt;",
