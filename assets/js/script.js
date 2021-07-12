@@ -18,8 +18,7 @@ var choiceB = document.getElementById("B");
 var choiceC = document.getElementById("C");
 var choiceD = document.getElementById("D");
 
-//  localStorage.setItem (HighScore, JSON.stringify(itemsArray));
-//  const  = JSON.parse(localStorage.getItem)('addHighScore'));
+
 
 
 //keeping track of score
