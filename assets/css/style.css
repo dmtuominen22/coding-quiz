@@ -55,4 +55,31 @@ h1{
   cursor: pointer; 
 }
 
-/* add mediaquery to make the container respoistive */
+/* Use  media query  */
+ @media (max-width: 980px) {
+  #container {
+    font-size: 15px;
+    margin: 16px 15px 15px 15px;
+    padding: 10px 15px;
+    width:fit-content
+  }
+}
+
+ @media (max-width: 850px) {
+  #container {
+    font-size: 15px;
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px;
+    width:fit-content
+  }
+}
+
+
+@media (max-width: 600px) {
+  #container {
+    font-size: 15px;
+    margin: 16px 15px 15px 15px;
+    padding: 10px 15px;
+  }
+  } 
+} 

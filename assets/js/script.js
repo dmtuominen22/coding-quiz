@@ -18,8 +18,8 @@ var choiceB = document.getElementById("B");
 var choiceC = document.getElementById("C");
 var choiceD = document.getElementById("D");
 
-// localStorage.setItem (HighScore, JSON.stringify(itemsArray));
-// const  = JSON.parse(localStorage.getItem)('addHighScore'));
+//  localStorage.setItem (HighScore, JSON.stringify(itemsArray));
+//  const  = JSON.parse(localStorage.getItem)('addHighScore'));
 
 
 //keeping track of score
@@ -120,7 +120,7 @@ var question = [
 function timer (){
     myTimer = setInterval (function () {
         if (time > 1) {
-           countTime.innerHTML = time;
+           countTime.innerHTML = "Timer: " + time;
         }
         else {
             countTime.innerHTML = 'complete';
@@ -140,13 +140,12 @@ start.addEventListener("click", function (){
     intro.style.display = "none";
     score=0;
 
-    
-
     currentQ = 0;
     time=150;
     timer();
     showQuestion (currentQ);
-   
+
+    showHighScore();
 }) ;
 
 
