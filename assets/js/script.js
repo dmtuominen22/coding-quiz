@@ -187,7 +187,11 @@ function submitHighScore() {
 
     var pastHighScore = JSON.parse(localStorage.getItem('highScore'));
 
-    //push high score 
+    //push high scores to local storage
+
+
+
+
 
     console.log(highScore)
     addHighScore.style.display = "none";
@@ -196,7 +200,7 @@ function submitHighScore() {
 
 //FUNCTION show high score
 function showHighScore() {
-    let highScoreText = "<h2>High Scores</h2>";
+    let highScoreText = "<h2></h2>";
     for (var i = 0; i < highScore.length; i++) {
         highScoreText += "<p>" + highScore[i].initials + ": " + highScore[i].topScore + "</p>";
     }
