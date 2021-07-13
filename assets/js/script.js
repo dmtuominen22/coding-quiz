@@ -13,13 +13,18 @@ var intro = document.getElementById("intro");
 var highScore = new Array();
 var addHighScore =document.getElementById("addHighScore");
 
+var listHighScore = document.querySelector('highScore')
+
 var choiceA = document.getElementById("A");
 var choiceB = document.getElementById("B");
 var choiceC = document.getElementById("C");
 var choiceD = document.getElementById("D");
 
 
-
+function renderLastRegistered (){
+    var addHighScore = localStorage.getItem('addHighScore');
+   
+}
 
 //keeping track of score
 var score = 0;
@@ -202,5 +207,17 @@ function showHighScore () {
     currentQ++; 
     showQuestion(currentQ);
 
+
+    // Save highScore using `setItem()`
+    localStorage.setItem('highScore', highScore);
+
+    // Render the last registered email and password
+    renderLastRegistered();
+ 
 }
+
+
+
+
+
 
