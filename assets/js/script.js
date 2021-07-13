@@ -6,12 +6,12 @@ var questionEl = document.getElementById("question");
 var validate = document.getElementById("validate");
 var currentQ = 0;
 var countTime = document.getElementById("timer");
-var time =0;
+var time = 0;
 var myTimer;
 var title = document.getElementById("title");
 var intro = document.getElementById("intro");
-var highScore = new Array();
-var addHighScore =document.getElementById("addHighScore");
+var highScore = [];
+var addHighScore = document.getElementById("addHighScore");
 
 var listHighScore = document.querySelector('highScore')
 
@@ -21,9 +21,9 @@ var choiceC = document.getElementById("C");
 var choiceD = document.getElementById("D");
 
 
-function renderLastRegistered (){
-    var addHighScore = localStorage.getItem('addHighScore');
-   
+function renderLastRegistered() {
+    var addHighScore = localStorage.getItem('highScore');
+
 }
 
 //keeping track of score
@@ -31,28 +31,28 @@ var score = 0;
 
 var question = [
     {
-        question : "What does CSS stand for",
-        choiceA : "Cascade Style Sheet",
-        choiceB : "Covert Styles Sheet",  
-        choiceC : "Cascadeing Style Sheet",    
-        choiceD : "Color and Style Sheet",
-        correct : "A"
+        question: "What does CSS stand for",
+        choiceA: "Cascade Style Sheet",
+        choiceB: "Covert Styles Sheet",
+        choiceC: "Cascadeing Style Sheet",
+        choiceD: "Color and Style Sheet",
+        correct: "A"
     },
 
     {
-        question : "What are people who write computer code called?",
-        choiceA : "Manufacturers",
-        choiceB : "Teacher",
-        choiceC : "Programmers",
-        choiceD : "Professors",
-        correct : "C"
-    },  
+        question: "What are people who write computer code called?",
+        choiceA: "Manufacturers",
+        choiceB: "Teacher",
+        choiceC: "Programmers",
+        choiceD: "Professors",
+        correct: "C"
+    },
 
     {
-        question : "What are variables used for in JavaScript Programs?",
-        choiceA : "Storing numbers, dates, or other values",
-        choiceB : "Varying randomly",
-        choiceC : "Causing high-school algebra flashbacks",
+        question: "What are variables used for in JavaScript Programs?",
+        choiceA: "Storing numbers, dates, or other values",
+        choiceB: "Varying randomly",
+        choiceC: "Causing high-school algebra flashbacks",
         choiceD: "None of the above",
         correct: "A"
     },
@@ -73,7 +73,7 @@ var question = [
         choiceC: "Ruby",
         choiceD: "Banana",
         correct: "D"
-    },  
+    },
 
     {
         question: "What word describes the set of instructions that computers need to do work?",
@@ -82,7 +82,7 @@ var question = [
         choiceC: "Program",
         choiceD: "Synopsis",
         correct: "C"
-    },  
+    },
 
     {
         question: "What is computer coding?",
@@ -91,7 +91,7 @@ var question = [
         choiceC: "A TV show",
         choiceD: "A radio show",
         correct: "B"
-    },  
+    },
 
     {
         question: "What tag is used to define a hyperlink, or link to anoher page?",
@@ -100,7 +100,7 @@ var question = [
         choiceC: "&lt;blockquote&gt;",
         choiceD: "&lt;a&gt;",
         correct: "D"
-    },  
+    },
 
     {
         question: "What can loop offer JaveScript code as a whole?",
@@ -109,7 +109,7 @@ var question = [
         choiceC: "Cleaner syntax",
         choiceD: "Cross-platform support",
         correct: "A"
-    },  
+    },
 
     {
         question: "Inside which HTML element do we put the JavaScript?",
@@ -118,13 +118,13 @@ var question = [
         choiceC: "&lt;js&gt;",
         choiceD: "&lt;script&gt;",
         correct: "D"
-    } 
+    }
 ];
 
-function timer (){
-    myTimer = setInterval (function () {
+function timer() {
+    myTimer = setInterval(function () {
         if (time > 1) {
-           countTime.innerHTML = "Timer: " + time;
+            countTime.innerHTML = "Timer: " + time;
         }
         else {
             countTime.innerHTML = 'complete';
@@ -136,84 +136,95 @@ function timer (){
 
 
 // Add event listener to generate button
-start.addEventListener("click", function (){
+start.addEventListener("click", function () {
     validate.innerHTML = "";
     start.style.display = "none";
     quiz.style.display = "block";
     title.style.display = "none";
     intro.style.display = "none";
-    score=0;
+    score = 0;
 
     currentQ = 0;
-    time=150;
+    time = 150;
     timer();
-    showQuestion (currentQ);
+    showQuestion(currentQ);
 
     showHighScore();
-}) ;
+});
 
 
 //show quesiton
-function showQuestion (questionNumber){
-    if (questionNumber < question.length){
-        questionEl.innerHTML=question[questionNumber].question;
-        choiceA.innerHTML=question[questionNumber].choiceA;
-        choiceB.innerHTML=question[questionNumber].choiceB;
-        choiceC.innerHTML=question[questionNumber].choiceC;
-        choiceD.innerHTML=question[questionNumber].choiceD;
+function showQuestion(questionNumber) {
+    if (questionNumber < question.length) {
+        questionEl.innerHTML = question[questionNumber].question;
+        choiceA.innerHTML = question[questionNumber].choiceA;
+        choiceB.innerHTML = question[questionNumber].choiceB;
+        choiceC.innerHTML = question[questionNumber].choiceC;
+        choiceD.innerHTML = question[questionNumber].choiceD;
     }
     else {
         quizComplete();
     }
-  }
+}
 function quizComplete() {
     clearInterval(myTimer);
     start.style.display = "block";
-    quiz.style.display = "none"; 
-    validate.innerHTML= "Your Score Is " + score;
+    quiz.style.display = "none";
+    validate.innerHTML = "Your Score Is " + score;
     addHighScore.style.display = "block";
 }
 
 //add high score
-function submitHighScore () {
-    highScore.push ( {
+function submitHighScore() {
+    console.log("im adding to high score")
+    highScore.push({
         initials: document.getElementById("initials").value,
         topScore: score
     });
+
+    // Save highScore using `setItem()`
+    localStorage.setItem('highScore',  JSON.stringify(highScore));
+
+    var pastHighScore = JSON.parse(localStorage.getItem('highScore'));
+
+    //push high score 
+
+    console.log(highScore)
     addHighScore.style.display = "none";
     showHighScore();
 }
 
 //FUNCTION show high score
-function showHighScore () {
+function showHighScore() {
     let highScoreText = "<h2>High Scores</h2>";
-    for (var i = 0; i <highScore.length; i++){
-        highScoreText += "<p>" + highScore[i].initials + ": "+ highScore[i].topScore + "</p>";    
+    for (var i = 0; i < highScore.length; i++) {
+        highScoreText += "<p>" + highScore[i].initials + ": " + highScore[i].topScore + "</p>";
     }
     validate.innerHTML = highScoreText;
 }
 
+
+
 //check answers
-   function checkAnswer (choicePicked){
-    if (choicePicked === question[currentQ].correct)
-    { score ++
-         validate.innerHTML="Correct"; 
-         
+function checkAnswer(choicePicked) {
+    if (choicePicked === question[currentQ].correct) {
+        score++
+        validate.innerHTML = "Correct";
+
     }
     else {
-        validate.innerHTML="Wrong";
+        validate.innerHTML = "Wrong";
         time -= 10;
-    } 
-    currentQ++; 
+    }
+    currentQ++;
     showQuestion(currentQ);
+    console.log(highScore)
 
 
-    // Save highScore using `setItem()`
-    localStorage.setItem('highScore', highScore);
 
-    // Render the last registered email and password
-    renderLastRegistered();
- 
+
+
+
 }
 
 
