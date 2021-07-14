@@ -142,7 +142,7 @@ start.addEventListener("click", function () {
     quiz.style.display = "block";
     title.style.display = "none";
     intro.style.display = "none";
-    score = 0;
+     score = 0;
 
     currentQ = 0;
     time = 150;
@@ -176,7 +176,6 @@ function quizComplete() {
 
 //add high score
 function submitHighScore() {
-    console.log("im adding to high score")
     highScore.push({
         initials: document.getElementById("initials").value,
         topScore: score
@@ -187,26 +186,18 @@ function submitHighScore() {
 
     var pastHighScore = JSON.parse(localStorage.getItem('highScore'));
 
-    //push high scores to local storage
-
-
-
-
-
-    console.log(highScore)
     addHighScore.style.display = "none";
     showHighScore();
 }
 
 //FUNCTION show high score
 function showHighScore() {
-    let highScoreText = "<h2></h2>";
+    let highScoreText = "";
     for (var i = 0; i < highScore.length; i++) {
         highScoreText += "<p>" + highScore[i].initials + ": " + highScore[i].topScore + "</p>";
     }
     validate.innerHTML = highScoreText;
 }
-
 
 
 //check answers
@@ -222,8 +213,6 @@ function checkAnswer(choicePicked) {
     }
     currentQ++;
     showQuestion(currentQ);
-    console.log(highScore)
-
 
 
 
