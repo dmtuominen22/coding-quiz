@@ -12,18 +12,14 @@ var title = document.getElementById("title");
 var intro = document.getElementById("intro");
 var highScore = [];
 var addHighScore = document.getElementById("addHighScore");
-
 var listHighScore = document.querySelector('highScore')
-
 var choiceA = document.getElementById("A");
 var choiceB = document.getElementById("B");
 var choiceC = document.getElementById("C");
 var choiceD = document.getElementById("D");
 
-
 function renderLastRegistered() {
     var addHighScore = localStorage.getItem('highScore');
-
 }
 
 //keeping track of score
@@ -38,7 +34,6 @@ var question = [
         choiceD: "Color and Style Sheet",
         correct: "A"
     },
-
     {
         question: "What are people who write computer code called?",
         choiceA: "Manufacturers",
@@ -47,7 +42,6 @@ var question = [
         choiceD: "Professors",
         correct: "C"
     },
-
     {
         question: "What are variables used for in JavaScript Programs?",
         choiceA: "Storing numbers, dates, or other values",
@@ -56,7 +50,6 @@ var question = [
         choiceD: "None of the above",
         correct: "A"
     },
-
     {
         question: "What group of tags are used to define the text headers in the body of the HTML document?",
         choiceA: "&lt;td&gt;",
@@ -65,7 +58,6 @@ var question = [
         choiceD: "&lt;button&gt;",
         correct: "C"
     },
-
     {
         question: "Which of thses is NOT a programming language?",
         choiceA: "Python",
@@ -74,7 +66,6 @@ var question = [
         choiceD: "Banana",
         correct: "D"
     },
-
     {
         question: "What word describes the set of instructions that computers need to do work?",
         choiceA: "Blueprint",
@@ -83,7 +74,6 @@ var question = [
         choiceD: "Synopsis",
         correct: "C"
     },
-
     {
         question: "What is computer coding?",
         choiceA: "A list of functions",
@@ -92,7 +82,6 @@ var question = [
         choiceD: "A radio show",
         correct: "B"
     },
-
     {
         question: "What tag is used to define a hyperlink, or link to anoher page?",
         choiceA: "&lt;strong&gt;",
@@ -101,7 +90,6 @@ var question = [
         choiceD: "&lt;a&gt;",
         correct: "D"
     },
-
     {
         question: "What can loop offer JaveScript code as a whole?",
         choiceA: "improved performance",
@@ -110,7 +98,6 @@ var question = [
         choiceD: "Cross-platform support",
         correct: "A"
     },
-
     {
         question: "Inside which HTML element do we put the JavaScript?",
         choiceA: "&lt;Pizza&gt;",
@@ -134,7 +121,6 @@ function timer() {
     }, 1000);
 }
 
-
 // Add event listener to generate button
 start.addEventListener("click", function () {
     validate.innerHTML = "";
@@ -142,16 +128,13 @@ start.addEventListener("click", function () {
     quiz.style.display = "block";
     title.style.display = "none";
     intro.style.display = "none";
-     score = 0;
-
+    score = 0;
     currentQ = 0;
     time = 150;
     timer();
     showQuestion(currentQ);
-
     showHighScore();
 });
-
 
 //show quesiton
 function showQuestion(questionNumber) {
@@ -182,10 +165,8 @@ function submitHighScore() {
     });
 
     // Save highScore using `setItem()`
-    localStorage.setItem('highScore',  JSON.stringify(highScore));
-
+    localStorage.setItem('highScore', JSON.stringify(highScore));
     var pastHighScore = JSON.parse(localStorage.getItem('highScore'));
-
     addHighScore.style.display = "none";
     showHighScore();
 }
@@ -199,13 +180,11 @@ function showHighScore() {
     validate.innerHTML = highScoreText;
 }
 
-
 //check answers
 function checkAnswer(choicePicked) {
     if (choicePicked === question[currentQ].correct) {
         score++
         validate.innerHTML = "Correct";
-
     }
     else {
         validate.innerHTML = "Wrong";
@@ -213,11 +192,6 @@ function checkAnswer(choicePicked) {
     }
     currentQ++;
     showQuestion(currentQ);
-
-
-
-
-
 }
 
 
